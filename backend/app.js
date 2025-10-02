@@ -7,6 +7,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+//database connection
+
 const mongoDb = mongoose
   .connect(
     "mongodb+srv://hello:hello@cluster0.m21n6zg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
