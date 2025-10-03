@@ -28,20 +28,21 @@ app.get("/", async (req, res) => {
 app.get("/read/:id", async (req, res) => {
   const id = req.params.id;
   const blog = await BlogModel.findById(id);
-  req.status(200).json({
+  res.status(200).json({
     message: "Single Blog read.",
     data: blog,
   });
 });
 
 app.post("/create", async (req, res) => {
-  await BlogModel.create({
+  const blog = await BlogModel.create({
     title: req.body.title,
     subtitle: req.body.subtitle,
     description: req.body.description,
   });
   res.status(200).json({
     message: "Blog created successfully",
+    data: blog,
   });
 });
 
