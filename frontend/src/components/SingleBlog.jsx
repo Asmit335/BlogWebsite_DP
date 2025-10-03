@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "./SingleBlog.css"; 
 
 const SingleBlog = () => {
@@ -44,9 +44,11 @@ const SingleBlog = () => {
       <div className="single-blog-description">{blog.description}</div>
       
       <div className="single-blog-actions">
+        <Link to={`/update/${blog._id}`}>
         <button className="edit-btn">
           ✏️ Edit
         </button>
+        </Link>
         <button className="delete-btn" onClick={handleDelete}>
           🗑️ Delete
         </button>

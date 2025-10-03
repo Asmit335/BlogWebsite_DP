@@ -6,6 +6,7 @@ import SingleBlog from './components/SingleBlog'
 import CreateBlog from './components/CreateBlog'
 import About from './components/About'
 import Contact from './components/Contact'
+import UpdateBlog from './components/UpdateBlog'
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/create' element={<CreateBlog/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/update/:id' element={<UpdateBlog/>}/>
       </Routes>
       </BrowserRouter>
     </>
