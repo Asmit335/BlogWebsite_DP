@@ -39,6 +39,7 @@ app.post("/create", async (req, res) => {
     title: req.body.title,
     subtitle: req.body.subtitle,
     description: req.body.description,
+    author: req.body.author,
   });
   res.status(200).json({
     message: "Blog created successfully",
@@ -48,11 +49,12 @@ app.post("/create", async (req, res) => {
 
 app.patch("/update/:id", async (req, res) => {
   const id = req.params.id;
-  const { title, subtitle, description } = req.body;
+  const { title, subtitle, description, author } = req.body;
   await BlogModel.findByIdAndUpdate(id, {
     title,
     subtitle,
     description,
+    author,
   });
   res.status(200).json({
     message: "Blog updated successfully.",

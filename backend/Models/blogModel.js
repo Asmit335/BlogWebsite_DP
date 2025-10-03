@@ -5,6 +5,7 @@ const blogModelSchema = new mongoose.Schema(
     title: String,
     subtitle: String,
     description: String,
+    author: String,
   },
   {
     timestamps: true,
