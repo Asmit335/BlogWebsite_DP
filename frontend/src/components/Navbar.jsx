@@ -18,14 +18,7 @@ const Navbar = () => {
             Home
           </Link>
         </li>
-        <li>
-          <Link
-            to="/blogs"
-            className={location.pathname === '/blogs' ? 'active-link' : ''}
-          >
-            Blogs
-          </Link>
-        </li>
+      
         <li>
           <Link
             to="/about"

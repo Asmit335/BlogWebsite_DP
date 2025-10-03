@@ -44,7 +44,7 @@ const SingleBlog = () => {
       <div className="single-blog-description">{blog.description}</div>
       
       <div className="single-blog-actions">
-        <button className="edit-btn" onClick={handleUpdate}>
+        <button className="edit-btn">
           ✏️ Edit
         </button>
         <button className="delete-btn" onClick={handleDelete}>

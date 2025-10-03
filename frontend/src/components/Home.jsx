@@ -5,7 +5,7 @@ const featuredPost = {
   title: "Welcome to My Blog!",
   summary: "Explore latest trends, tutorials, and stories on tech, lifestyle, and more.",
   image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
-  link: "/blogs/featured-post",
+  link: "/",
 };
 
 const Home = () => {
@@ -44,17 +44,24 @@ const Home = () => {
       <section className="latest-posts">
         <h3>Latest Posts</h3>
         <div className="posts-grid">
-      
-      {
-  blog.map(post => (
-    <div className="post-card" key={post._id}>
-      <h2 className="post-title">{post.title}</h2>
-      <h3 className="post-subtitle">{post.subtitle}</h3>
-      <p className="post-description">{post.description}</p>
-      <a href={`/read/${post._id}`} className="btn-readmore">Read More →</a>
-    </div>
-  ))
-}  
+     
+ {
+  blog.length > 0 ? (
+    blog.map(post => (
+      <div className="post-card" key={post._id}>
+        <h2 className="post-title">{post.title}</h2>
+        <h3 className="post-subtitle">{post.subtitle}</h3>
+        <p className="post-description">{post.description}</p>
+        <a href={`/read/${post._id}`} className="btn-readmore">Read More →</a>
+      </div>
+    ))
+  ) : (
+    <p style={{ textAlign: "center", fontSize: "1.2rem", color: "#777" }}>
+      No blogs found.
+    </p>
+  )
+}
+ 
         </div>
       </section>
     </div>
